@@ -3,6 +3,11 @@ Back-end
 server.js
 api routes (GET/POST+callback logic)
 
+GET - existing users of specified type(vendors, customers[eventCreators], guests)
+select * from users where type = ?
+
+POST - user creation
+
 2)
 sql schema design+seed
 sequelize logic/queries
@@ -28,6 +33,32 @@ available events?
 
 Database tables:
 Users/Groups aka Vendors (id, name, type, rsvp'd)
+id: int,
+name: string,
+type: string, (customer, guests, vendors)
+phone number: int,
+email: string
+
+Event
+id:
+name:
+type:
+attendees:
+owner:
+venue:
+caterer:
+DJ:
+otherVendor(s):
+
+Vendors:
+ID:
+name:
+type: (venue, caterer, DJ, other)
+address:
+phone:
+email:
+
 Events (venue, caterer, DJ, date/time, attendees, owner)
 Vendors (venues, caterers, DJs, capacity, location, style?)
 Calendar
+
