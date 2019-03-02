@@ -1,0 +1,33 @@
+Back-end
+1)
+server.js
+api routes (GET/POST+callback logic)
+
+2)
+sql schema design+seed
+sequelize logic/queries
+models
+index.js
+
+Front-end:
+3)
+front-end JS
+index.js
+handlebar templates /views(bootstrap?)
+
+
+
+survey type model for customers - type of event, dates, etc
+	-> creates web pages for the event dynamically
+
+3 UIs: Customers, Vendors, Guests
+
+Basic Info (user/group name, next event?)
+Calendar
+available events?
+
+Database tables:
+Users/Groups aka Vendors (id, name, type, rsvp'd)
+Events (venue, caterer, DJ, date/time, attendees, owner)
+Vendors (venues, caterers, DJs, capacity, location, style?)
+Calendar
