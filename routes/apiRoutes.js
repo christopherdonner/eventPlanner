@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all userss
   app.get("/api/userss", function(req, res) {
-    db.users.findAll({}).then(function(dbusers) {
+    db.Users.findAll({}).then(function(dbusers) {
       res.json(dbusers);
     });
   });
@@ -15,7 +15,7 @@ module.exports = function(app) {
     });
   });
 
-  // Delete an users by id
+  // Delete user by id
   app.delete("/api/userss/:id", function(req, res) {
     db.users.destroy({ where: { id: req.params.id } }).then(function(dbusers) {
       res.json(dbusers);
