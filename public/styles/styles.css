@@ -12,12 +12,29 @@ body {
 }
 
 .labelsForRegistration {
-  background-color: rgb(247, 242, 243);
   font-size: 20px;
+  font-weight: bold
 }
 
 #userRegistration {
   background:rgba(255,255,255,0.5);
-  margin-left: 800px;
-  margin-top: 100px;
+  margin-left: 0px;
+  margin-top: 40px;
+}
+
+#logo {
+  width: 100%;
+  height: 220px;
+  margin-top: 50px;
+}
+
+#reserve-btn, #venues-btn, #user-btn {
+  width: 33%;
+  margin-top: 30px;
+  background-color: rgb(236, 236, 128);
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(138, 138, 67);
+  text-shadow: -1px 0 rgb(252, 251, 250), 0 1px rgb(252, 251, 249), 1px 0 rgb(250, 249, 247), 0 -1px rgb(248, 248, 248);
+
 }
