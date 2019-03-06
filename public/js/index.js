@@ -46,7 +46,7 @@ var refreshUsers = function() {
             " " +
             user.email
         )
-        .attr("href", "/users/" + user.id);
+        .attr("href", "/userss/" + user.id);
 
       var $li = $("<li>")
         .attr({

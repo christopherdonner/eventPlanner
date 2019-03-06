@@ -1,3 +1,40 @@
+new technology - https://fullcalendar.io/?
+
+landing page: 
+show list of existing users
+
+
+2 user types, 2 views
+Guest, Planner, Vendors
+
+Guests:
+Display existing user Info
+Will see a list of existing events (findAll)
+Can RSVP to open events (links that fire Modals? [super cool!!])
+calendars
+
+Event Planner:
+CRUDS events
+Creates events
+Deletes events
+update events you are owner of
+Events:
+	id
+	name
+	type
+	Location
+	style?
+	attendee list (userID)
+	owner (userID)
+
+send invites to users (calendar?)
+
+Feature sets:
+Event Attendee 
+
+Event Planner
+
+
 Back-end
 1)
 server.js
