@@ -1,5 +1,2 @@
 DROP DATABASE IF EXISTS eventPlannerDB;
 CREATE DATABASE eventPlannerDB;
-
--- DROP DATABASE IF EXISTS testdb;
--- CREATE DATABASE testdb;
