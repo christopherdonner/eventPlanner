@@ -3,6 +3,7 @@ $(document).ready(function() {
   $("#user-btn").on("click", function(event) {
     event.preventDefault();
     $("#userRegistration").fadeToggle(1000);
+    $(".usersListBox").hide();
   });
 
   // Get references to page elements
@@ -89,7 +90,7 @@ $(document).ready(function() {
     };
 
     if (!(user.name && user.type && user.phone && user.email)) {
-      alert("You must enter user text and description!");
+      alert("You must enter user text and other information!");
       return;
     }
 

@@ -6,13 +6,23 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  // Load Users page and pass in a user by id
-  app.get("/userss/:id", function(req, res) {
-    db.Users.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
-      res.render("users", {
-        user: dbUser
+  // Load Events Page
+  app.get("/events", function(req, res) {
+    db.Events.findAll({}).then(function(dbEvents) {
+      res.render("events", {
+        events: dbEvents
       });
     });
+  });
+
+  // Load Booking Page
+  app.get("/booking", function(req, res) {
+    res.render("bookingPage");
+  });
+
+  // Render About Us page
+  app.get("/aboutUs", function(req, res) {
+    res.render("aboutUs");
   });
 
   // Render 404 page for any unmatched routes
