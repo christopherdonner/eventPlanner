@@ -25,7 +25,7 @@ module.exports = function(app) {
     res.render("aboutUs");
   });
 
-  // Render 404 page for any unmatched routes
+  // Render 404 page for any unmatched routess
   app.get("*", function(req, res) {
     res.render("404");
   });
