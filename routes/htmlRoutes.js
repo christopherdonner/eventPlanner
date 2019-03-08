@@ -11,8 +11,6 @@ module.exports = function(app) {
     db.Events.findAll({}).then(function(dbEvents) {
       res.render("events", {
         events: dbEvents
-<<<<<<< HEAD
-=======
       })
     })
 
@@ -22,7 +20,6 @@ module.exports = function(app) {
       console.log(req.params.id, dbUser);
       res.render("users", {
         user: dbUser
->>>>>>> 9d99ed399f84c72015dfb64540947fcee9ceb978
       });
     });
   });
