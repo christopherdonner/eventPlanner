@@ -3,10 +3,18 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Users.findAll({}).then(function(dbusers){ 
     res.render("index");
-    })
   });
+
+  // Load Events Page
+  app.get("/events", function(req, res) {
+    db.Events.findAll({}).then(function(dbEvents) {
+      res.render("events", {
+        events: dbEvents
+<<<<<<< HEAD
+=======
+      })
+    })
 
   // Load Users page and pass in a user by id
   app.get("/userss/:id", function(req, res) {
@@ -14,11 +22,22 @@ module.exports = function(app) {
       console.log(req.params.id, dbUser);
       res.render("users", {
         user: dbUser
+>>>>>>> e5918d4548515191f869401c36c4b6cb8a33f790
       });
     });
   });
 
-  // Render 404 page for any unmatched routes
+  // Load Booking Page
+  app.get("/booking", function(req, res) {
+    res.render("bookingPage");
+  });
+
+  // Render About Us page
+  app.get("/aboutUs", function(req, res) {
+    res.render("aboutUs");
+  });
+
+  // Render 404 page for any unmatched routess
   app.get("*", function(req, res) {
     res.render("404");
   });
