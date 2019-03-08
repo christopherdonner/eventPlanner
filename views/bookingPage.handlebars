@@ -12,7 +12,13 @@
             <h1 id="instructions">If you are an existing user, see the list below and click on your Name;
                 otherwise click on the Registration button to continue</h1>
             <br>
-            <button type="button" class="btn btn-warning" id="user-btn">Register</button>
+            <button type="button" class="btn btn-warning" id="register-btn">Register</button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-warning" id="user-btn">User</button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-warning" id="planner-btn">Planner</button>
         </div>
         <div class="col-md-3 usersListBox">
             <p>TestName</p>
@@ -53,49 +59,54 @@
     </div>
     <!--Users form-->
     <div id="home">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 offset-2" id="userRegistration">
-            <h1 class="text-center"><b>{{msg}}</b></h1>
-            <h2 class="text-center"><b>Enter your information to register</b></h2>
-            <form class="clearfix mb-4" action="POST">
-              <div class="form-group">
-                <label for="user-name" class="labelsForRegistration">Your Name</label>
-                <input type="text" id="user-name" class="form-control" aria-describedby="user-name" placeholder="">
-              </div>
-              <div class="form-group">
-                <label for="user-type" class="labelsForRegistration">Type of User (Atendee / Planner)</label>
-                <textarea class="form-control" id="user-type" aria-describedby="user-type" placeholder=""></textarea>
-              </div>
-              <div class="form-group">
-                <label for="user-phone" class="labelsForRegistration">Your Phone Number</label>
-                <input type="text" id="user-phone" class="form-control" aria-describedby="user-phone" placeholder="">
-              </div>
-              <div class="form-group">
-                <label for="user-email" class="labelsForRegistration">Your email</label>
-                <input type="text" id="user-email" class="form-control" aria-describedby="user-email" placeholder="">
-              </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-2" id="userRegistration">
+                    <h1 class="text-center"><b>{{msg}}</b></h1>
+                    <h2 class="text-center"><b>Enter your information to register</b></h2>
+                    <form class="clearfix mb-4" action="POST">
+                        <div class="form-group">
+                            <label for="user-name" class="labelsForRegistration">Your Name</label>
+                            <input type="text" id="user-name" class="form-control" aria-describedby="user-name"
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-type" class="labelsForRegistration">Type of User (Atendee /
+                                Planner)</label>
+                            <textarea class="form-control" id="user-type" aria-describedby="user-type"
+                                placeholder=""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-phone" class="labelsForRegistration">Your Phone Number</label>
+                            <input type="text" id="user-phone" class="form-control" aria-describedby="user-phone"
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-email" class="labelsForRegistration">Your email</label>
+                            <input type="text" id="user-email" class="form-control" aria-describedby="user-email"
+                                placeholder="">
+                        </div>
 
-              <button id="submitBtn" class="btn btn-primary float-right">Submit</button>
-            </form>
+                        <button id="submitBtn" class="btn btn-primary float-right">Submit</button>
+                    </form>
 
-            <h3>Users in the database:</h3>
-            <ul id="user-list" class="list-group">
-              {{#each Users}}
-              <li data-id="{{this.id}}" class="list-group-item">
-                <a href="users/{{this.id}}">{{this.name}}</a>
-                <button class="btn btn-danger float-right delete">ｘ</button>
-              </li>
-              {{/each}}
-            </ul>
+                    <h3>Users in the database:</h3>
+                    <ul id="user-list" class="list-group">
+                        {{#each Users}}
+                        <li data-id="{{this.id}}" class="list-group-item">
+                            <a href="users/{{this.id}}">{{this.name}}</a>
+                            <button class="btn btn-danger float-right delete">ｘ</button>
+                        </li>
+                        {{/each}}
+                    </ul>
 
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Modals start here-->
-    
+
     <!--Modals end here-->
 </div>
 

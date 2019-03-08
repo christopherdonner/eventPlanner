@@ -5,6 +5,8 @@ $(document).ready(function() {
     $("#userRegistration").fadeToggle(1000);
     $(".usersListBox").hide();
   });
+  $("#user-btn").hide();
+  $("#planner-btn").hide();
 
   // Get references to page elements
   var userName = $("#user-name");
