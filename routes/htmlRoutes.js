@@ -3,25 +3,14 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Users.findAll({}).then(function(dbusers){ 
     res.render("index");
-    })
   });
 
-<<<<<<< HEAD
   // Load Events Page
   app.get("/events", function(req, res) {
     db.Events.findAll({}).then(function(dbEvents) {
       res.render("events", {
         events: dbEvents
-=======
-  // Load Users page and pass in a user by id
-  app.get("/userss/:id", function(req, res) {
-    db.Users.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
-      console.log(req.params.id, dbUser);
-      res.render("users", {
-        user: dbUser
->>>>>>> 1ec309cb11725d1a1a078bd567da76da252e1c2f
       });
     });
   });
