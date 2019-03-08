@@ -75,6 +75,41 @@ $(document).ready(function() {
       userList.empty();
       userList.append(users);
     });
+
+  }
+};
+
+// refreshUsers gets new users from the db and repopulates the list
+var refreshUsers = function() {
+  API.getUsers().then(function(data) {
+    var users = data.map(function(user) {
+      var $a = $("<a>")
+        .text(
+          user.name.toUpperCase() +
+            " " +
+            user.type +
+            " " +
+            user.phone +
+            " " +
+            user.email
+        )
+        .attr("href", "/userss/" + user.id);
+
+      var $li = $("<li>")
+        .attr({
+          class: "list-group-item",
+          "data-id": user.id
+        })
+        .append($a);
+
+      var $button = $("<button>")
+        .addClass("btn btn-danger float-right delete")
+        .text("ｘ");
+
+      $li.append($button);
+
+      return $li;
+
   };
 
   // handleFormSubmit is called whenever we submit a new user
@@ -96,6 +131,7 @@ $(document).ready(function() {
 
     API.saveUser(user).then(function() {
       refreshUsers();
+
     });
 
     userName.val("");
