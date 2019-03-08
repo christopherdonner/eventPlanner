@@ -15,6 +15,15 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/users/:id", function(req, res) {
+    db.Users.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
+      res.render("users", {
+        user: dbUser
+      });
+    });
+  });
+
+
   // Load Booking Page
   app.get("/booking", function(req, res) {
     res.render("bookingPage");
