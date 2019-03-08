@@ -13,6 +13,8 @@ module.exports = function(app) {
     db.Events.findAll({}).then(function(dbEvents) {
       res.render("events", {
         events: dbEvents
+      })
+    })
 
   // Load Users page and pass in a user by id
   app.get("/userss/:id", function(req, res) {
