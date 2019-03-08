@@ -11,6 +11,18 @@ module.exports = function(app) {
     db.Events.findAll({}).then(function(dbEvents) {
       res.render("events", {
         events: dbEvents
+<<<<<<< HEAD
+=======
+      })
+    })
+
+  // Load Users page and pass in a user by id
+  app.get("/userss/:id", function(req, res) {
+    db.Users.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
+      console.log(req.params.id, dbUser);
+      res.render("users", {
+        user: dbUser
+>>>>>>> e5918d4548515191f869401c36c4b6cb8a33f790
       });
     });
   });
