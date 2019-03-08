@@ -7,7 +7,11 @@ $(document).ready(function() {
   });
   $("#user-btn").hide();
   $("#planner-btn").hide();
-
+  $("#register-btn").on("click", function(event) {
+    event.preventDefault();
+    $("#user-btn").show();
+    $("#planner-btn").show();
+  });
   // Get references to page elements
   var userName = $("#user-name");
   var userType = $("#user-type");
