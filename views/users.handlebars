@@ -3,11 +3,40 @@
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
-          <h5 class="card-title">Welcome, {{name}}{{user.name}}</h5>
-
-            <a href="/">← Back To Home</a>
+          <h5 class="card-title">Welcome, {{user.name}}</h5>
+          <ul>
+            {{#each events}}
+              <li>
+                <a href="/events/{{this.id}}">{{this.id}}{{this.name}}</a>
+              </li>
+            {{/each}}
+          </ul>
+          <a href="/">← Back To Home</a>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<!-- Modal -->
+<div id="results-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title"><strong>Event Info</strong></h2>
+      </div>
+      <div class="modal-body">
+        <h2 id="event-name">{{event.name}}</h2>
+        <h4><p>{{event.startTime}}</p></h4>
+        <h4><p>{{event.description}}</p></h4>
+        <img id="event-img" src="http://blog.bestbuy.ca/wp-content/uploads/2019/02/party.jpg" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>

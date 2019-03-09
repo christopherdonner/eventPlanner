@@ -90,12 +90,12 @@ $(document).ready(function() {
 
     var user = {
       name: userName.val().trim(),
-      type: userType.val().trim(),
+      // type: userType.val().trim(),
       phone: userPhone.val().trim(),
       email: userEmail.val().trim()
     };
 
-    if (!(user.name && user.type && user.phone && user.email)) {
+    if (!(user.name && user.phone && user.email)) {
       alert("You must enter user text and other information!");
       return;
     }
