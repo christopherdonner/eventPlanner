@@ -1,12 +1,6 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  var dbEvents;
-
-  db.Events.findAll({}).then(function (dbEvent) {
-    dbEvents = dbEvent;
-  });
-
   // Load index page
   app.get("/", function (req, res) {
     res.render("index");
@@ -21,16 +15,25 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/events:id", function (req, res) {
+    db.Events.findOne({ where: { id: req.params.id } }).then(function (dbEvent) {
+      res.render("events", {
+        events: dbEvent
+      });
+    });
+  });
+
   app.get("/users/:id", function (req, res) {
     db.Users.findOne({ where: { id: req.params.id } }).then(function (dbUser) {
       db.Events.findAll({}).then(function (dbEvent) {
+        console.log(dbEvent)
         res.render("users", {
           user: dbUser,
           events: dbEvent
         });
       });
     });
-  })
+  });
 
   // Load Booking Page
   app.get("/booking", function (req, res) {

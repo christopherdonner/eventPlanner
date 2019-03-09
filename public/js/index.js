@@ -1,13 +1,13 @@
-$(document).ready(function() {
+$(document).ready(function () {
   $("#userRegistration").hide();
-  $("#user-btn").on("click", function(event) {
+  $("#user-btn").on("click", function (event) {
     event.preventDefault();
     $("#userRegistration").fadeToggle(1000);
     $(".usersListBox").hide();
   });
   $("#user-btn").hide();
   $("#planner-btn").hide();
-  $("#register-btn").on("click", function(event) {
+  $("#register-btn").on("click", function (event) {
     event.preventDefault();
     $("#user-btn").show();
     $("#planner-btn").show();
@@ -22,7 +22,7 @@ $(document).ready(function() {
 
   // The API object contains methods for each kind of request we'll make
   var API = {
-    saveUser: function(user) {
+    saveUser: function (user) {
       return $.ajax({
         headers: {
           "Content-Type": "application/json"
@@ -32,33 +32,38 @@ $(document).ready(function() {
         data: JSON.stringify(user)
       });
     },
-    getUsers: function() {
+    getUsers: function () {
       return $.ajax({
         url: "api/userss",
         type: "GET"
       });
     },
-    deleteUser: function(id) {
+    deleteUser: function (id) {
       return $.ajax({
         url: "api/userss/" + id,
         type: "DELETE"
       });
+    },
+    getEvent: function (id) {
+      return $.ajax({
+        url: ""
+      })
     }
   };
 
   // refreshUsers gets new users from the db and repopulates the list
-  var refreshUsers = function() {
-    API.getUsers().then(function(data) {
-      var users = data.map(function(user) {
+  var refreshUsers = function () {
+    API.getUsers().then(function (data) {
+      var users = data.map(function (user) {
         var $a = $("<a>")
           .text(
             user.name.toUpperCase() +
-              " " +
-              user.type +
-              " " +
-              user.phone +
-              " " +
-              user.email
+            " " +
+            user.type +
+            " " +
+            user.phone +
+            " " +
+            user.email
           )
           .attr("href", "/users/" + user.id);
 
@@ -85,7 +90,7 @@ $(document).ready(function() {
 
   // handleFormSubmit is called whenever we submit a new user
   // Save the new user to the db and refresh the list
-  var handleFormSubmit = function(event) {
+  var handleFormSubmit = function (event) {
     event.preventDefault();
 
     var user = {
@@ -100,7 +105,7 @@ $(document).ready(function() {
       return;
     }
 
-    API.saveUser(user).then(function() {
+    API.saveUser(user).then(function () {
       refreshUsers();
     });
 
@@ -112,12 +117,12 @@ $(document).ready(function() {
 
   // handleDeleteBtnClick is called when an user's delete button is clicked
   // Remove the user from the db and refresh the list
-  var handleDeleteBtnClick = function() {
+  var handleDeleteBtnClick = function () {
     var idToDelete = $(this)
       .parent()
       .attr("data-id");
 
-    API.deleteUser(idToDelete).then(function() {
+    API.deleteUser(idToDelete).then(function () {
       refreshUsers();
     });
   };
@@ -125,4 +130,9 @@ $(document).ready(function() {
   // Add event listeners to the submit and delete buttons
   $("#submitBtn").on("click", handleFormSubmit);
   userList.on("click", ".delete", handleDeleteBtnClick);
+
+  $(".event").on("click", function () {
+    console.log("event click")
+  })
+
 });
