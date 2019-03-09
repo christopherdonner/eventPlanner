@@ -7,7 +7,7 @@
           <ul>
             {{#each events}}
               <li>
-                <a href="/events/{{this.id}}">{{this.id}}{{this.name}}</a>
+                <button type="button" class="event btn btn-secondary"  eventID={{this.id}}>{{this.id}}. {{this.name}} </button>
               </li>
             {{/each}}
           </ul>
@@ -28,10 +28,10 @@
         <h2 class="modal-title"><strong>Event Info</strong></h2>
       </div>
       <div class="modal-body">
-        <h2 id="event-name">{{event.name}}</h2>
-        <h4><p>{{event.startTime}}</p></h4>
-        <h4><p>{{event.description}}</p></h4>
-        <img id="event-img" src="http://blog.bestbuy.ca/wp-content/uploads/2019/02/party.jpg" alt="">
+        <h2 id="event-name">{{events.name}}</h2>
+        <h4><p>{{events.startTime}}</p></h4>
+        <h4><p>{{events.description}}</p></h4>
+        <img id="event-img" src="http://blog.bestbuy.ca/wp-content/uploads/2019/02/party.jpg" height=200 alt="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -40,3 +40,10 @@
 
   </div>
 </div>
+<script src="../public/js/index.js"></script>
+<script type="text/javascript">
+  $(".event").on("click", function () {
+    console.log("event click")
+    $("#results-modal").modal("toggle");
+  })
+</script>
