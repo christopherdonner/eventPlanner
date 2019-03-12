@@ -21,6 +21,14 @@ module.exports = function(sequelize, DataTypes) {
     style: {
       type: DataTypes.TEXT,
       len: [1]
+    },
+    startTime: {
+      type: DataTypes.DATE,
+      len: [1]
+    },
+    endTime: {
+      type: DataTypes.DATE,
+      len: [1]
     }
   });
   return Events;

@@ -1,25 +1,109 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <a href="/"><button type="button" class="btn btn-warning" id="home-btn">Home</button></a>
-      <a href="/aboutUs"><button type="button" class="btn btn-warning" id="aboutUs-btn">About Us</button></a>
-      <a href="/booking"><button type="button" class="btn btn-warning" id="booking-btn">Getting
-          Started</button></a>
-      <a href="/events"><button type="button" class="btn btn-warning" id="events-btn">Current Events</button></a>
-    </div>
+<body id="eventsBg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="/"><button type="button" class="btn btn-warning" id="home-btn">Home</button></a>
+        <a href="/aboutUs"><button type="button" class="btn btn-warning" id="aboutUs-btn">About Us</button></a>
+        <a href="/booking"><button type="button" class="btn btn-warning" id="booking-btn">Getting
+            Started</button></a>
+        <a href="/events"><button type="button" class="btn btn-warning" id="events-btn">Current Events</button></a>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-8 offset-2">
+            <div class="card mt-10" id="eventMainBox">
+              <div class="card-body">
+                <h5 class="card-title">List of Events</h5>
+                <ul>
+                  {{#each events}}
+                  <li>
+                    <button type="button" class="btn-modal-event btn-primary" data-toggle="modal"
+                      data-target="myModalEvent" eventsID={{this.id}}>{{this.id}}.
+                      {{this.name}} <span id="event-btn-text">Click me for details</span></button><br>
+                  </li>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-8 offset-2">
-          <div class="card mt-4">
-            <div class="card-body">
-              <h5 class="card-title">User</h5>
+                  {{/each}}
+                </ul>
 
-              <a href="/">← Back To Home</a>
+                <a href="/">← Back To Home</a>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
+
+      <!-- The Modal -->
+      <div id="myModalEvent" class="modal">
+        <!-- Modal content -->
+        {{#each events}}
+        <div class="modal-content">
+          <h1 id="modalTitle" class="modal-labels"><b>Your Event</b></h1>
+          <h2 id="event-name" class="modal-labels"><b>Event Name:</b> {{this.name}}</h2>
+          <h2 class="modal-labels">
+            <b>Start Time:</b> {{this.startTime}}
+          </h2>
+          <h2 class="modal-labels">
+            <b>End Time:</b> {{this.endTime}}
+          </h2>
+          <h2 class="modal-labels">
+            <b>Location:</b> {{this.location}}
+          </h2>
+          <h2 class="modal-labels">
+            <b>Style:</b> {{this.style}}
+          </h2>
+          <br>
+          <button id="edit-event-btn">Edit</button>
+          <button id="delete-event-btn">Delete</button>
+          <!--form to update event-->
+          <div class="container">
+            <div class="row">
+              <div class="col-6 offset-2" id="updateEventForm">
+                <h2 class="text-center"><b>Modify your Event!</b></h2>
+                <form class="clearfix mb-4" action="POST">
+                  <div class="form-group">
+                    <label for="event-name" class="labelsForRegistration">Event Name</label>
+                    <input type="text" id="event-name" class="form-control" aria-describedby="event-name"
+                      placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="event-type" class="labelsForRegistration">Type of event (wedding, party,
+                      meeting, etc)</label>
+                    <input type="text" id="event-type" class="form-control" aria-describedby="event-type"
+                      placeholder=""></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="event-location" class="labelsForRegistration">Location</label>
+                    <input type="text" id="event-location" class="form-control" aria-describedby="event-location"
+                      placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="event-style" class="labelsForRegistration">Style</label>
+                    <input type="text" id="event-style" class="form-control" aria-describedby="event-style"
+                      placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="event-start" class="labelsForRegistration">Start Time</label>
+                    <input type="text" id="event-start" class="form-control" aria-describedby="event-start"
+                      placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="event-end" class="labelsForRegistration">End Time</label>
+                    <input type="text" id="event-end" class="form-control" aria-describedby="event-end" placeholder="">
+                  </div>
+
+                  <button type="submit" id="updateEvent-btn" class="btn btn-primary float-right">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+
+      </div>
+
+      <!--Modal Bootstrap-->
     </div>
   </div>
-</div>
+  <script src="/js/indexEvents.js"></script>
+</body>

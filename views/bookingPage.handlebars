@@ -20,48 +20,12 @@
         <div class="col-md-6">
             <button type="button" class="btn btn-warning" id="planner-btn">Planner</button>
         </div>
-        <div class="col-md-3 usersListBox">
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-        </div>
-        <div class="col-md-3 usersListBox">
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-        </div>
-        <div class="col-md-3 usersListBox">
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-        </div>
-        <div class="col-md-3 usersListBox">
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-            <hr>
-            <p>TestName</p>
-        </div>
     </div>
     <!--Users form-->
     <div id="home">
         <div class="container">
             <div class="row">
-                <div class="col-4 offset-2" id="userRegistration">
+                <div class="col-6 offset-2" id="userRegistration">
                     <h1 class="text-center"><b>{{msg}}</b></h1>
                     <h2 class="text-center"><b>Enter your information to register</b></h2>
                     <form class="clearfix mb-4" action="POST">
@@ -69,12 +33,6 @@
                             <label for="user-name" class="labelsForRegistration">Your Name</label>
                             <input type="text" id="user-name" class="form-control" aria-describedby="user-name"
                                 placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="user-type" class="labelsForRegistration">Type of User (Atendee /
-                                Planner)</label>
-                            <textarea class="form-control" id="user-type" aria-describedby="user-type"
-                                placeholder=""></textarea>
                         </div>
                         <div class="form-group">
                             <label for="user-phone" class="labelsForRegistration">Your Phone Number</label>
@@ -105,11 +63,53 @@
         </div>
     </div>
 
-    <!-- Modals start here-->
+    <!--Planners form to create event-->
+    <div id="homePlanners">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 offset-2" id="eventForm">
+                    {{!-- <h1 class="text-center"><b>{{msg}}</b></h1> --}}
+                    <h2 class="text-center"><b>Create your Event!</b></h2>
+                    <form class="clearfix mb-4" action="POST">
+                        <div class="form-group">
+                            <label for="event-name" class="labelsForRegistration">Event Name</label>
+                            <input type="text" id="event-name" class="form-control" aria-describedby="event-name"
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type" class="labelsForRegistration">Type of event (wedding, party,
+                                meeting, etc)</label>
+                            <input type="text" id="event-type" class="form-control" aria-describedby="event-type"
+                                placeholder=""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-location" class="labelsForRegistration">Location</label>
+                            <input type="text" id="event-location" class="form-control"
+                                aria-describedby="event-location" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="event-style" class="labelsForRegistration">Style</label>
+                            <input type="text" id="event-style" class="form-control" aria-describedby="event-style"
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="event-start" class="labelsForRegistration">Start Time</label>
+                            <input type="text" id="event-start" class="form-control" aria-describedby="event-start"
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="event-end" class="labelsForRegistration">End Time</label>
+                            <input type="text" id="event-end" class="form-control" aria-describedby="event-end"
+                                placeholder="">
+                        </div>
 
-    <!--Modals end here-->
+                        <button id="submitEvent-btn" class="btn btn-primary float-right">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script src="/js/indexEvents.js"></script>

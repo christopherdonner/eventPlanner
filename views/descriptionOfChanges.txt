@@ -1,0 +1,18 @@
+Created an indexEvents.js file due to having conflicts with index.js
+registration forms on bookingPage.handlebars was modified to fit half of the whindow
+
+bookingPage.handlebars: Removed event created after filling out form
+events.handlebars: modified for modal to be open on events' links 
+                   anchor added for link events
+                   New background for events
+                   list of events was styled
+indexEvents.js: added modal code at the bottom of page
+index.js: fixed bug that showed hidden content for a second when clicking home button
+
+
+tasks:
+on indexEvents.js create CRUD (see author/Post excercise for reference) for links on events.handlers 
+                                                                        
+*In modal, event description should be shown
+                 an Edit btn and delete btn should be added to the modal event
+

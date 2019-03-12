@@ -14,6 +14,29 @@ module.exports = function(app) {
       });
     });
   });
+  // Load Event by id 
+  app.get("/events/:id", function(req, res) {
+    db.Events.findOne({ where: { id: req.params.id } }).then(function() {
+      db.Events.findAll({}).then(function(dbEvents) {
+        console.log(dbEvents);
+        res.render("events", {
+          events: dbEvents
+        });
+      });
+    });
+  });
+
+  // Load User by id
+  app.get("/userss/:id", function(req, res) {
+    db.Users.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
+      db.Events.findAll({}).then(function(dbEvent) {
+        console.log(dbEvent);
+        res.render("users", {
+          user: dbUser
+        });
+      });
+    });
+  });
 
   // Load Booking Page
   app.get("/booking", function(req, res) {
