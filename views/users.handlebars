@@ -5,10 +5,18 @@
         <div class="card-body">
           <h5 class="card-title">Welcome, {{user.name}}</h5>
           <ul>
+<<<<<<< HEAD
+            {{#each user}}
+            <li>
+              <button type="button" class="event btn btn-secondary" id="userEvent-btn">{{this.id}}. {{this.name}}
+                {{this.email}} {{this.phone}}</button>
+            </li>
+=======
             {{#each events}}
               <li>
                 <button type="button" class="event btn btn-secondary"  eventID={{this.id}}>{{this.id}}. {{this.name}} </button>
               </li>
+>>>>>>> master
             {{/each}}
           </ul>
           <a href="/">← Back To Home</a>
@@ -17,6 +25,21 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
+<!-- The Modal -->
+<div id="myModalEvent" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1 id="modalTitle">You successfully created a new Event!</h1>
+    <img id="event-img" src="http://blog.bestbuy.ca/wp-content/uploads/2019/02/party.jpg" height=400 alt="">
+  </div>
+
+</div>
+
+<script src="/js/index.js"></script>
+=======
 <!-- Modal -->
 <div id="results-modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -47,3 +70,4 @@
     $("#results-modal").modal("toggle");
   })
 </script>
+>>>>>>> master

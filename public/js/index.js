@@ -1,18 +1,38 @@
+<<<<<<< HEAD
+$(document).ready(function() {
+  //User button hiding planner-btn
+  $("#userRegistration").hide();
+  $("#eventForm").hide();
+  $("#user-btn").on("click", function(event) {
+=======
 $(document).ready(function () {
   $("#userRegistration").hide();
   $("#user-btn").on("click", function (event) {
+>>>>>>> master
     event.preventDefault();
+    $("#planner-btn").toggle();
     $("#userRegistration").fadeToggle(1000);
     $(".usersListBox").hide();
   });
+  //register-btn toggling user and planner btns
   $("#user-btn").hide();
   $("#planner-btn").hide();
   $("#register-btn").on("click", function (event) {
     event.preventDefault();
-    $("#user-btn").show();
-    $("#planner-btn").show();
+    $("#titleBooking").fadeOut();
+    $("#user-btn").toggle();
+    $("#planner-btn").toggle();
   });
+  //planner-btn toggling user-btn
+  $("#planner-btn").on("click", function(event) {
+    event.preventDefault();
+    $("#user-btn").toggle();
+    $(".usersListBox").hide();
+    $("#eventForm").fadeToggle(1000);
+  });
+
   // Get references to page elements
+  //user reference
   var userName = $("#user-name");
   var userType = $("#user-type");
   var userPhone = $("#user-phone");
@@ -65,7 +85,7 @@ $(document).ready(function () {
             " " +
             user.email
           )
-          .attr("href", "/users/" + user.id);
+          .attr("href", "/userss/" + user.id);
 
         var $li = $("<li>")
           .attr({
