@@ -1,6 +1,17 @@
+12/03/2019:
+Alex:
+event Deletes/edit
+event create to write owner userID to event.owner
+write attendee list to event modal
+
+Christopher:
+Notification table
+fix modals (copy alex)
+implement calendar
+
 new technology - https://fullcalendar.io/?
 
-landing page: 
+landing page:
 show list of existing users
 
 
@@ -30,7 +41,7 @@ Events:
 send invites to users (calendar?)
 
 Feature sets:
-Event Attendee 
+Event Attendee
 
 Event Planner
 
@@ -98,4 +109,3 @@ email:
 Events (venue, caterer, DJ, date/time, attendees, owner)
 Vendors (venues, caterers, DJs, capacity, location, style?)
 Calendar
-
