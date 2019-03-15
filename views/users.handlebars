@@ -5,6 +5,7 @@
         <div class="card-body">
           <h5 class="card-title">Welcome, {{user.name}}</h5>
           <ul>
+            <h5>Here is a list of all avaliable events, Click on the one you're interested in</h5>
             {{#each events}}
               <li>
                 <button type="button" class="event btn btn-secondary"  eventID={{this.id}}>{{this.id}}. {{this.name}} </button>
@@ -20,7 +21,7 @@
 
 </div>
 <!-- Modal -->
-<div id="results-modal" class="modal fade" role="dialog">
+<div id="results-modal" class="modal">
   <div class="modal-dialog">
 
     <!-- Modal content-->
