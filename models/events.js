@@ -23,13 +23,21 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     startTime: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       len: [1]
     },
     endTime: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       len: [1]
     }
+    // owner: {
+    //   type: DataTypes.TEXT,
+    //   len: [1]
+    // },
+    // attendee: {
+    //   type: DataTypes.JSON,
+    //   len: [1]
+    // }
   });
   return Events;
 };

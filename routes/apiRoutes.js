@@ -60,13 +60,19 @@ module.exports = function(app) {
   });
 
   // PUT route for updating events
-  app.put("/api/events", function(req, res) {
+  app.put("/api/events:id", function(req, res) {
     db.Events.update(req.body, {
       where: {
         id: req.body.id
       }
     }).then(function(dbPost) {
       res.json(dbPost);
+    });
+  });
+
+  app.put("/api/notify/:id", function(req, res) {
+    db.Notifications.create(req.body).then(function(dbNotification) {
+      res.json(dbNotification);
     });
   });
 };

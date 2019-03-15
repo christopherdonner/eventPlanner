@@ -14,7 +14,7 @@ module.exports = function(app) {
       });
     });
   });
-  // Load Event by id 
+  // Load Event by id
   app.get("/events/:id", function(req, res) {
     db.Events.findOne({ where: { id: req.params.id } }).then(function() {
       db.Events.findAll({}).then(function(dbEvents) {
@@ -26,13 +26,21 @@ module.exports = function(app) {
     });
   });
 
-  // Load User by id
+  app.get("/events:id", function(req, res) {
+    db.Events.findOne({ where: { id: req.params.id } }).then(function(dbEvent) {
+      res.render("events", {
+        events: dbEvent
+      });
+    });
+  });
+
   app.get("/userss/:id", function(req, res) {
     db.Users.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
       db.Events.findAll({}).then(function(dbEvent) {
         console.log(dbEvent);
         res.render("users", {
-          user: dbUser
+          user: dbUser,
+          events: dbEvent
         });
       });
     });
