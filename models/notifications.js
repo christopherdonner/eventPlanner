@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Notifications = sequelize.define("Notifications", {
     id: {
       type: DataTypes.INTEGER,
