@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "eventplannerDB",
-    "host": "localhost",
+    "username": "fquabf5ub8qcwz81",
+    "password": "kg2c76m1hm0fznpz",
+    "database": "em8zh42r4ru65q5t",
+    "host": "u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
