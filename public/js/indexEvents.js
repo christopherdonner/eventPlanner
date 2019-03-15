@@ -7,8 +7,6 @@ $(document).ready(function() {
   var eventStart = $("#event-start");
   var eventEnd = $("#event-end");
 
-  // var eventList = $("#event-list");
-
   //Events methods
   var API = {
     saveEvent: function(event) {
@@ -49,8 +47,8 @@ $(document).ready(function() {
       type: eventType.val().trim(),
       location: eventLocation.val().trim(),
       style: style.val().trim(),
-      start: eventStart.val().trim(),
-      end: eventEnd.val().trim()
+      startTime: eventStart.val().trim(),
+      endTime: eventEnd.val().trim()
     };
 
     if (
@@ -81,9 +79,14 @@ $(document).ready(function() {
     eventEnd.val("");
   };
 
-  // handleEventFormSubmit is called whenever we submit a new Event
   // Add event listeners to the event submit and delete buttons
   $("#submitEvent-btn").on("click", handleEventFormSubmit);
+
+  //update event
+  $("#edit-event-btn").on("click", function(event) {
+    event.preventDefault();
+    $("#updateEventForm").toggle();
+  });
 
   //myModalEvent
   $(".btn-modal-event").on("click", function(event) {
