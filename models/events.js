@@ -29,6 +29,14 @@ module.exports = function(sequelize, DataTypes) {
     endTime: {
       type: DataTypes.DATEONLY,
       len: [1]
+    },
+    owner: {
+      type: DataTypes.TEXT,
+      len: [1]
+    },
+    attendee: {
+      type: DataTypes.JSON,
+      len: [1]
     }
     // owner: {
     //   type: DataTypes.TEXT,

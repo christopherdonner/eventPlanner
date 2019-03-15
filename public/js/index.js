@@ -167,14 +167,17 @@ $(document).ready(function() {
   });
 });
 
-//clock
-// eslint-disable-next-line prettier/prettier
-// eslint-disable-next-line no-unused-vars
 var clock = setInterval(function() {
   $("#trainClock").text(moment());
 }, 1000);
 
+
+//clock
+// eslint-disable-next-line prettier/prettier
+// eslint-disable-next-line no-unused-vars
+var clock=setInterval(function(){$("#trainClock").text(moment());}, 1000);
+
 $("#calendar").fullCalendar({
   // put your options and callbacks here
-  defaultView: "agendaWeek"
+  defaultView: 'agendaWeek'
 });

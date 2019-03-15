@@ -72,7 +72,7 @@ module.exports = function(app) {
 
   app.put("/api/notify/:id", function(req, res) {
     db.Notifications.create(req.body).then(function(dbNotification) {
-      res.json(dbNotification);
+      res.json(dbNotification)
     });
   });
 };
