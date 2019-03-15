@@ -7,8 +7,6 @@ $(document).ready(function() {
   var eventStart = $("#event-start");
   var eventEnd = $("#event-end");
 
-  //   var eventList = $("#event-list");
-
   //Events methods
   var API = {
     saveEvent: function(event) {
@@ -40,47 +38,6 @@ $(document).ready(function() {
       });
     }
   };
-
-  //refreshEvents gets new Events from the db and repopulates the list
-  //   var refreshEvents = function() {
-  //     API.getEvent().then(function(data) {
-  //       var events = data.map(function(event) {
-  //         var $a = $("<a>")
-  //           .text(
-  //             event.name.toUpperCase() +
-  //               " " +
-  //               event.type +
-  //               " " +
-  //               event.location +
-  //               " " +
-  //               event.style +
-  //               " " +
-  //               event.startTime +
-  //               " " +
-  //               event.endTime
-  //           )
-  //           .attr("href", "/events/" + event.id);
-
-  //         var $li = $("<li>")
-  //           .attr({
-  //             class: "list-group-items",
-  //             "data-id": event.id
-  //           })
-  //           .append($a);
-
-  //         var $button = $("<button>")
-  //           .addClass("btn btn-danger float-right delete")
-  //           .text("ｘ");
-
-  //         $li.append($button);
-
-  //         return $li;
-  //       });
-
-  //       eventList.empty();
-  //       eventList.append(events);
-  //     });
-  //   };
 
   var handleEventFormSubmit = function(eve) {
     eve.preventDefault();
@@ -122,26 +79,8 @@ $(document).ready(function() {
     eventEnd.val("");
   };
 
-  // handleEventFormSubmit is called whenever we submit a new Event
-  // Save the new Event to the db and refresh the list
-
-  //Events
-  // handleEventDeleteBtnClick is called when a user's delete button is clicked
-  // Remove the user from the db and refresh the list
-  //   function handleDeleteBtnClick() {
-  //     var idToDelete = $(this)
-  //       .parent()
-  //       .attr("data-id");
-
-  //     API.deleteEvent(idToDelete).then(function() {
-  //       refreshEvents();
-  //     });
-  //   }
   // Add event listeners to the event submit and delete buttons
   $("#submitEvent-btn").on("click", handleEventFormSubmit);
-  //   $("#delete-event-btn").on("click", function() {
-  //     handleDeleteBtnClick();
-  //   });
 
   //update event
   $("#edit-event-btn").on("click", function(event) {

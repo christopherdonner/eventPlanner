@@ -23,11 +23,11 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     startTime: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       len: [1]
     },
     endTime: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       len: [1]
     },
     owner: {
