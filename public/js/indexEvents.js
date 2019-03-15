@@ -90,8 +90,8 @@ $(document).ready(function() {
       type: eventType.val().trim(),
       location: eventLocation.val().trim(),
       style: style.val().trim(),
-      start: eventStart.val().trim(),
-      end: eventEnd.val().trim()
+      startTime: eventStart.val().trim(),
+      endTime: eventEnd.val().trim()
     };
 
     if (
@@ -100,8 +100,8 @@ $(document).ready(function() {
         event.type &&
         event.location &&
         event.style &&
-        event.start &&
-        event.end
+        event.startTime &&
+        event.endTime
       )
     ) {
       alert("You must enter text for the event and the rest of information!");
@@ -153,8 +153,5 @@ $(document).ready(function() {
   $(".btn-modal-event").on("click", function(event) {
     event.preventDefault();
     $("#myModalEvent").modal("show");
-    console.log(this.name);
-    console.log(startTime);
-    console.log(endTime);
   });
 });

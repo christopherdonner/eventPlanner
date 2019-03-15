@@ -154,14 +154,12 @@ $(document).ready(function() {
 
   $(".event").on("click", function() {
     var id = $(this).attr("eventID");
-    console.log("event click " + id);
     API.getEvent(id).then(function() {
       $("#results-modal").modal("toggle");
     });
   });
 
   $("#RSVP").on("click", function(id) {
-    console.log("RSVP" + id);
     alert("You have expressed interest in this event");
     API.RSVP(id.id);
   });
@@ -170,9 +168,25 @@ $(document).ready(function() {
 //clock
 // eslint-disable-next-line prettier/prettier
 // eslint-disable-next-line no-unused-vars
-var clock=setInterval(function(){$("#trainClock").text(moment());}, 1000);
+var clock = setInterval(function() {
+  $("#trainClock").text(moment());
+}, 1000);
 
 $("#calendar").fullCalendar({
   // put your options and callbacks here
-  defaultView: 'agendaWeek'
+  defaultView: "month",
+  height: 400,
+  contentHeight: 400,
+  theme: "bootstrap3",
+  events: [
+    {
+      title: "event1",
+      start: "2010-01-01"
+    },
+    {
+      title: "event2",
+      start: "2010-01-05",
+      end: "2010-01-07"
+    }
+  ]
 });
