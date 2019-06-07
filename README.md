@@ -147,3 +147,6 @@ fix modals
 implement calendar
 
 new technology - https://fullcalendar.io/?
+
+Link to our deployed app:
+https://fast-springs-87530.herokuapp.com/booking
