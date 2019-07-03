@@ -18,7 +18,6 @@ module.exports = function(app) {
   app.get("/events/:id", function(req, res) {
     db.Events.findOne({ where: { id: req.params.id } }).then(function() {
       db.Events.findAll({}).then(function(dbEvents) {
-        console.log(dbEvents);
         res.render("events", {
           events: dbEvents
         });
@@ -37,7 +36,6 @@ module.exports = function(app) {
   app.get("/userss/:id", function(req, res) {
     db.Users.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
       db.Events.findAll({}).then(function(dbEvent) {
-        console.log(dbEvent);
         res.render("users", {
           user: dbUser,
           events: dbEvent

@@ -1,11 +1,11 @@
 <div class="container">
+  <div class="row" id=></div>
   <div class="row">
-    <div class="col-8">
+    <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">Welcome, {{user.name}}</h5>
           <ul>
-            <h5>Here is a list of all avaliable events, Click on the one you're interested in</h5>
             {{#each events}}
               <li>
                 <button type="button" class="event btn btn-secondary"  eventID={{this.id}}>{{this.id}}. {{this.name}} </button>
@@ -16,12 +16,11 @@
         </div>
       </div>
     </div>
-      <div class="col-md-3 offset-1" id="calendar" style="background-color:white"></div>
   </div>
-
 </div>
+
 <!-- Modal -->
-<div id="results-modal" class="modal">
+<div id="results-modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -47,12 +46,9 @@
     </div>
   </div>
 </div>
-
-<script src="/js/index.js"></script>
-<script src="/js/indexUsers.js"></script>
-{{!-- <script type="text/javascript">
+<script src="../public/js/index.js"></script>
+<script type="text/javascript">
   $(".event").on("click", function () {
-    console.log("event click")
     $("#results-modal").modal("toggle");
   })
-</script> --}}
+</script>
